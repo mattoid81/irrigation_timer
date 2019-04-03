@@ -10,9 +10,9 @@
 /* Type Definition */
 typedef unsigned long time_t; //
 
-/* Declaration to check if SOLENOID_PIN is currently on */
+/* Check if SOLENOID_PIN is currently on */
 bool watering = false; // Are we currently watering or not? Sets value to off by default
-time_t lastEvent; // When did we last turn off or on? Sets value to zero by default
+time_t lastEvent = 0; // When did we last turn off or on? Sets value to zero by default
 
 void setup() {                          // Setup code (runs once only)
   digitalWrite(SOLENOID_PIN, LOW) // Ensure the solenoid is off before engaging the output

@@ -8,11 +8,11 @@
 #define WATER_OFF_MILLIS (3600000 * WATER_OFF_HOURS - WATER_ON_MILLIS)
 
 /* Type Definition */
-typedef unsigned long time_t; // sets all time_t variables to type unsigned long
+typedef unsigned long time_t; //
 
-/* Check if SOLENOID_PIN is currently on */
+/* Declaration to check if SOLENOID_PIN is currently on */
 bool watering = false; // Are we currently watering or not? Sets value to off by default
-time_t lastEvent = 0; // When did we last turn off or on? Sets value to zero by default
+time_t lastEvent; // When did we last turn off or on? Sets value to zero by default
 
 void setup() {                          // Setup code (runs once only)
   digitalWrite(SOLENOID_PIN, LOW) // Ensure the solenoid is off before engaging the output
@@ -35,4 +35,3 @@ void loop() {                         // Loop code (runs continuously)
     digitalWrite(SOLENOID_PIN, HIGH); // turn on the solenoid
   }
 }
-
